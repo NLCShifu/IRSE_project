@@ -13,6 +13,5 @@ response = requests.get(url)
 with open(filename, "wb") as f:
     f.write(response.content)
 
-print(f"Downloaded {filename} successfully!")
-
 dataset = datasets.load_dataset("parquet", data_files=filename)['train']
+queries = json.load(open("./irse_queries_2026_recipes.json", "r"))
